@@ -10,7 +10,7 @@ const todoRouter = require('./controllers/todo')
 require('./utils/database')
 
 const corsOptions = {
-  origin: 'https://zen-hugle-0fb0a6.netlify.app',
+  origin: 'https://todo-list-pipe.netlify.app',
   optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions))
