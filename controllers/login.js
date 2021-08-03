@@ -7,7 +7,8 @@ require('dotenv').config()
 loginRouter.post('/', async (req, res, next) => {
   try {
     const { userData, password } = await loginValidation.validateAsync({ ...req.body })
-    const user = await User.findOne({ $or: [{ username: userData }, { email: userData }] })
+
+    const user = await User.findOne({ $or: [{ username: userData.trim() }, { email: userData.toLowerCase().trim() }] })
 
     const correctPassword = user === null
       ? false
