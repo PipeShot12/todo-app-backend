@@ -10,7 +10,7 @@ userRouter.post('/', async (req, res, next) => {
     const user = new User({
       name,
       username,
-      normalizedEmail,
+      email: normalizedEmail,
       passwordHash
     })
     const savedUser = await user.save()
